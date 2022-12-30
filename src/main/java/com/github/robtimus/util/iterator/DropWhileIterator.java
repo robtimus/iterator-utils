@@ -54,6 +54,11 @@ final class DropWhileIterator<E> extends LookaheadIterator<E> {
     }
 
     @Override
+    protected void remove(E element) {
+        delegate.remove();
+    }
+
+    @Override
     public void forEachRemaining(Consumer<? super E> action) {
         Objects.requireNonNull(action);
         delegate.forEachRemaining(e -> {

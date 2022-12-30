@@ -45,7 +45,8 @@ final class FilterIterator<E> extends LookaheadIterator<E> {
     }
 
     @Override
-    public void remove() {
+    protected void remove(E element) {
+        // the element is not needed
         delegate.remove();
     }
 

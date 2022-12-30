@@ -24,6 +24,9 @@ import java.util.function.Consumer;
 /**
  * A base class for {@link Iterator} implementations that need to calculate the next value in order to let {@link Iterator#hasNext()} return whether
  * or not there is a next value.
+ * <p>
+ * Sub classes should implement {@link #findNext(Consumer)} to find the next element. Furthermore, sub classes should support the
+ * {@link Iterator#remove()} operation should also override {@link #remove()} .
  *
  * @author Rob Spoor
  * @apiNote Removing elements has not been implemented. It is up to sub classes to implement it if removing elements needs to be supported.
@@ -31,8 +34,23 @@ import java.util.function.Consumer;
  */
 public abstract class LookaheadIterator<E> implements Iterator<E> {
 
-    private State state = State.UNSPECIFIED;
-    private E next = null;
+    private IterationState iterationState;
+    private E next;
+
+    // For removing
+    private E removable;
+    private boolean canRemove;
+
+    /**
+     * Creates a new lookahead iterator.
+     */
+    protected LookaheadIterator() {
+        iterationState = IterationState.UNKNOWN;
+        next = null;
+
+        removable = null;
+        canRemove = false;
+    }
 
     /**
      * Tries to finds the next element. If the next element could be found, the provided consumer should be called with the next element. Otherwise,
@@ -43,32 +61,71 @@ public abstract class LookaheadIterator<E> implements Iterator<E> {
     protected abstract void findNext(Consumer<E> next);
 
     @Override
-    public boolean hasNext() {
-        if (state == State.UNSPECIFIED) {
-            // assume ended unless the consumer in findNext is triggered
-            state = State.ENDED;
+    public final boolean hasNext() {
+        if (iterationState == IterationState.UNKNOWN) {
+            // Assume ended unless the consumer in findNext is triggered
+            iterationState = IterationState.ENDED;
             findNext(element -> {
                 next = element;
-                state = State.ACTIVE;
+                iterationState = IterationState.HAS_NEXT;
+                // Leave removable and canRemove intact; those should only be altered by next and remove
             });
         }
-        return state == State.ACTIVE;
+        return iterationState == IterationState.HAS_NEXT;
     }
 
     @Override
-    public E next() {
+    public final E next() {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        E result = next;
+        removable = next;
+        canRemove = true;
+
         next = null;
-        state = State.UNSPECIFIED;
-        return result;
+        iterationState = IterationState.UNKNOWN;
+
+        return removable;
     }
 
-    private enum State {
-        ACTIVE,
+    /**
+     * Removes the latest element returned by {@link Iterator#next()}.
+     *
+     * @param element The element to remove.
+     */
+    protected void remove(E element) {
+        throw new UnsupportedOperationException("remove"); //$NON-NLS-1$
+    }
+
+    @Override
+    public final void remove() {
+        if (!canRemove) {
+            throw new IllegalStateException();
+        }
+        remove(removable);
+
+        removable = null;
+        canRemove = false;
+    }
+
+    private enum IterationState {
+        /*
+         * Unknown whether or not iteration can continue or has ended
+         * Initial state
+         * Transition from HAS_NEXT through next
+         * Transition to HAS_NEXT or ENDED using findNext
+         */
+        UNKNOWN,
+        /*
+         * Iteration can continue
+         * Transition from UNKNOWN using findNext
+         * Transition to UNKNOWN through next
+         */
+        HAS_NEXT,
+        /*
+         * Final state
+         * Transition from UNKNOWN using findNext
+         */
         ENDED,
-        UNSPECIFIED,
     }
 }

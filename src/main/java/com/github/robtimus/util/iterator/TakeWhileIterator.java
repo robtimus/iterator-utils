@@ -36,19 +36,20 @@ final class TakeWhileIterator<E> extends LookaheadIterator<E> {
 
     @Override
     protected void findNext(Consumer<E> next) {
-        while (!nonMatchFound && delegate.hasNext()) {
+        if (!nonMatchFound && delegate.hasNext()) {
             E element = delegate.next();
             if (predicate.test(element)) {
                 next.accept(element);
-            } else {
-                nonMatchFound = true;
+                return;
             }
+            nonMatchFound = true;
         }
         // either a non-match was found or delegate is exhausted, don't call next
     }
 
     @Override
-    public void remove() {
+    protected void remove(E element) {
+        // the element is not needed
         delegate.remove();
     }
 
