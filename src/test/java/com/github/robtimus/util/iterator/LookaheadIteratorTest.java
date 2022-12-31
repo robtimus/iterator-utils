@@ -50,8 +50,9 @@ class LookaheadIteratorTest {
                     .boxed()
                     .collect(Collectors.toList());
             List<Integer> originalList = new ArrayList<>(list);
+            List<Integer> removed = new ArrayList<>();
 
-            Iterator<Integer> iterator = new TestIteratorWithRemove(list);
+            Iterator<Integer> iterator = new TestIteratorWithRemove(list, removed);
 
             // cannot remove when initialized
             assertThrows(IllegalStateException.class, iterator::remove);
@@ -76,6 +77,7 @@ class LookaheadIteratorTest {
                 assertThrows(IllegalStateException.class, iterator::remove, "index=" + i);
 
                 assertEquals(originalList.subList(i + 1, size), list, "index=" + i);
+                assertEquals(originalList.subList(0, i + 1), removed, "index=" + i);
             }
 
             assertFalse(iterator.hasNext());
@@ -83,6 +85,7 @@ class LookaheadIteratorTest {
             assertThrows(NoSuchElementException.class, iterator::next);
 
             assertEquals(Collections.emptyList(), list);
+            assertEquals(originalList, removed);
         }
 
         @Test
@@ -94,8 +97,9 @@ class LookaheadIteratorTest {
                     .boxed()
                     .collect(Collectors.toList());
             List<Integer> originalList = new ArrayList<>(list);
+            List<Integer> removed = new ArrayList<>();
 
-            Iterator<Integer> iterator = new TestIteratorWithRemove(list);
+            Iterator<Integer> iterator = new TestIteratorWithRemove(list, removed);
 
             // cannot remove when initialized
             assertThrows(IllegalStateException.class, iterator::remove);
@@ -113,11 +117,13 @@ class LookaheadIteratorTest {
                 assertThrows(IllegalStateException.class, iterator::remove, "index=" + i);
 
                 assertEquals(originalList.subList(i + 1, size), list, "index=" + i);
+                assertEquals(originalList.subList(0, i + 1), removed, "index=" + i);
             }
 
             assertThrows(NoSuchElementException.class, iterator::next);
 
             assertEquals(Collections.emptyList(), list);
+            assertEquals(originalList, removed);
         }
     }
 
@@ -220,9 +226,11 @@ class LookaheadIteratorTest {
     private static final class TestIteratorWithRemove extends LookaheadIterator<Integer> {
 
         private final Iterator<Integer> iterator;
+        private final List<Integer> removed;
 
-        private TestIteratorWithRemove(List<Integer> list) {
+        private TestIteratorWithRemove(List<Integer> list, List<Integer> removed) {
             iterator = list.iterator();
+            this.removed = removed;
         }
 
         @Override
@@ -236,6 +244,7 @@ class LookaheadIteratorTest {
         @Override
         protected void remove(Integer element) {
             iterator.remove();
+            removed.add(element);
         }
     }
 
