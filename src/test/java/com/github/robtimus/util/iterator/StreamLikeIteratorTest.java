@@ -1,5 +1,5 @@
 /*
- * StreamLikeIteratorImplTest.java
+ * StreamLikeIteratorTest.java
  * Copyright 2022 Rob Spoor
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +38,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 @SuppressWarnings("nls")
-class StreamLikeIteratorImplTest {
+class StreamLikeIteratorTest {
 
     // Intermediate steps separately are tested in tests for the iterator implementations
 

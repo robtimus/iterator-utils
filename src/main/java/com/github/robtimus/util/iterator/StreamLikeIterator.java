@@ -39,7 +39,33 @@ import java.util.stream.Stream;
  *          this class removes support for the operation.
  * @param <E> The element type.
  */
-public interface StreamLikeIterator<E> extends Iterator<E> {
+public final class StreamLikeIterator<E> implements Iterator<E> {
+
+    private final Iterator<E> delegate;
+
+    private StreamLikeIterator(Iterator<E> delegate) {
+        this.delegate = delegate;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return delegate.hasNext();
+    }
+
+    @Override
+    public E next() {
+        return delegate.next();
+    }
+
+    @Override
+    public void remove() {
+        delegate.remove();
+    }
+
+    @Override
+    public void forEachRemaining(Consumer<? super E> action) {
+        delegate.forEachRemaining(action);
+    }
 
     /**
      * Returns an iterator that filters out elements of this iterator.
@@ -49,7 +75,10 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given predicate is {@code null}.
      * @see Stream#filter(Predicate)
      */
-    StreamLikeIterator<E> filter(Predicate<? super E> predicate);
+    public StreamLikeIterator<E> filter(Predicate<? super E> predicate) {
+        Iterator<E> newDelegate = IteratorUtils.filter(delegate, predicate);
+        return new StreamLikeIterator<>(newDelegate);
+    }
 
     /**
      * Returns an iterator that applies a function to the elements of this iterator.
@@ -60,7 +89,10 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given function is {@code null}.
      * @see Stream#map(Function)
      */
-    <R> StreamLikeIterator<R> map(Function<? super E, ? extends R> mapper);
+    public <R> StreamLikeIterator<R> map(Function<? super E, ? extends R> mapper) {
+        Iterator<R> newDelegate = IteratorUtils.map(delegate, mapper);
+        return new StreamLikeIterator<>(newDelegate);
+    }
 
     /**
      * Returns an iterator that replaces the elements of this iterator with the elements of a mapped iterator produced by applying a function to each
@@ -74,7 +106,10 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given function is {@code null}.
      * @see Stream#flatMap(Function)
      */
-    <R> StreamLikeIterator<R> flatMap(Function<? super E, ? extends Iterator<? extends R>> mapper);
+    public <R> StreamLikeIterator<R> flatMap(Function<? super E, ? extends Iterator<? extends R>> mapper) {
+        Iterator<R> newDelegate = IteratorUtils.flatMap(delegate, mapper);
+        return new StreamLikeIterator<>(newDelegate);
+    }
 
     /**
      * Returns an iterator that returns the distinct elements of this iterator (according to {@link Object#equals(Object)}).
@@ -84,7 +119,10 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @return An iterator that returns the distinct elements of this iterator.
      * @see Stream#distinct()
      */
-    StreamLikeIterator<E> distinct();
+    public StreamLikeIterator<E> distinct() {
+        Iterator<E> newDelegate = IteratorUtils.distinct(delegate);
+        return new StreamLikeIterator<>(newDelegate);
+    }
 
     /**
      * Returns an iterator that performs an additional action for each element of this iterator.
@@ -94,7 +132,10 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given action is {@code null}.
      * @see Stream#peek(Consumer)
      */
-    StreamLikeIterator<E> peek(Consumer<? super E> action);
+    public StreamLikeIterator<E> peek(Consumer<? super E> action) {
+        Iterator<E> newDelegate = IteratorUtils.peek(delegate, action);
+        return new StreamLikeIterator<>(newDelegate);
+    }
 
     /**
      * Returns an iterator that truncates this iterator.
@@ -104,7 +145,10 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws IllegalArgumentException If the given maximum number of elements is negative.
      * @see Stream#limit(long)
      */
-    StreamLikeIterator<E> limit(long maxSize);
+    public StreamLikeIterator<E> limit(long maxSize) {
+        Iterator<E> newDelegate = IteratorUtils.limit(delegate, maxSize);
+        return new StreamLikeIterator<>(newDelegate);
+    }
 
     /**
      * Returns an iterator that discards a number of elements at the start of this iterator.
@@ -114,7 +158,10 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws IllegalArgumentException If the given number of elements is negative.
      * @see Stream#skip(long)
      */
-    StreamLikeIterator<E> skip(long n);
+    public StreamLikeIterator<E> skip(long n) {
+        Iterator<E> newDelegate = IteratorUtils.skip(delegate, n);
+        return new StreamLikeIterator<>(newDelegate);
+    }
 
     /**
      * Returns an iterator that discards elements of this iterator once an element matches a specific predicate.
@@ -123,7 +170,10 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @return An iterator that discards elements of this iterator once an element matches the given predicate.
      * @throws NullPointerException If the given predicate is {@code null}.
      */
-    StreamLikeIterator<E> takeWhile(Predicate<? super E> predicate);
+    public StreamLikeIterator<E> takeWhile(Predicate<? super E> predicate) {
+        Iterator<E> newDelegate = IteratorUtils.takeWhile(delegate, predicate);
+        return new StreamLikeIterator<>(newDelegate);
+    }
 
     /**
      * Returns an iterator that discards elements of this iterator until an element does not match a specific predicate.
@@ -132,7 +182,10 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @return An iterator that discards elements of this iterator until an element does not match the given predicate.
      * @throws NullPointerException If the given predicate is {@code null}.
      */
-    StreamLikeIterator<E> dropWhile(Predicate<? super E> predicate);
+    public StreamLikeIterator<E> dropWhile(Predicate<? super E> predicate) {
+        Iterator<E> newDelegate = IteratorUtils.dropWhile(delegate, predicate);
+        return new StreamLikeIterator<>(newDelegate);
+    }
 
     /**
      * Performs a reduction on the elements of this iterator.
@@ -143,7 +196,9 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given accumulator function is {@code null}.
      * @see Stream#reduce(Object, BinaryOperator)
      */
-    E reduce(E identity, BinaryOperator<E> accumulator);
+    public E reduce(E identity, BinaryOperator<E> accumulator) {
+        return IteratorUtils.reduce(delegate, identity, accumulator);
+    }
 
     /**
      * Performs a reduction on the elements of this iterator.
@@ -153,7 +208,9 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given accumulator function or the result of the reduction is {@code null}.
      * @see Stream#reduce(BinaryOperator)
      */
-    Optional<E> reduce(BinaryOperator<E> accumulator);
+    public Optional<E> reduce(BinaryOperator<E> accumulator) {
+        return IteratorUtils.reduce(delegate, accumulator);
+    }
 
     /**
      * Performs a reduction on the elements of this iterator.
@@ -165,7 +222,9 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given accumulator function is {@code null}.
      * @see Stream#reduce(Object, BiFunction, BinaryOperator)
      */
-    <U> U reduce(U identity, BiFunction<U, ? super E, U> accumulator);
+    public <U> U reduce(U identity, BiFunction<U, ? super E, U> accumulator) {
+        return IteratorUtils.reduce(delegate, identity, accumulator);
+    }
 
     /**
      * Performs a reduction on the elements of this iterator.
@@ -177,7 +236,9 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given supplier or accumulator function is {@code null}.
      * @see Stream#collect(Supplier, BiConsumer, BiConsumer)
      */
-    <R> R collect(Supplier<R> supplier, BiConsumer<R, ? super E> accumulator);
+    public <R> R collect(Supplier<R> supplier, BiConsumer<R, ? super E> accumulator) {
+        return IteratorUtils.collect(delegate, supplier, accumulator);
+    }
 
     /**
      * Performs a reduction on the elements of this iterator.
@@ -189,7 +250,9 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given collector is {@code null}.
      * @see Stream#collect(Collector)
      */
-    <R, A> R collect(Collector<? super E, A, R> collector);
+    public <R, A> R collect(Collector<? super E, A, R> collector) {
+        return IteratorUtils.collect(delegate, collector);
+    }
 
     /**
      * Returns the minimum element of this iterator according to a specific comparator.
@@ -199,7 +262,9 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given comparator is {@code null}.
      * @see Stream#min(Comparator)
      */
-    Optional<E> min(Comparator<? super E> comparator);
+    public Optional<E> min(Comparator<? super E> comparator) {
+        return IteratorUtils.min(delegate, comparator);
+    }
 
     /**
      * Returns the maximum element of this iterator according to a specific comparator.
@@ -209,7 +274,9 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given comparator is {@code null}.
      * @see Stream#max(Comparator)
      */
-    Optional<E> max(Comparator<? super E> comparator);
+    public Optional<E> max(Comparator<? super E> comparator) {
+        return IteratorUtils.max(delegate, comparator);
+    }
 
     /**
      * Returns the number of elements of this iterator.
@@ -217,7 +284,9 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @return The number of elements of this iterator.
      * @see Stream#count()
      */
-    long count();
+    public long count() {
+        return IteratorUtils.count(delegate);
+    }
 
     /**
      * Returns whether or not at least one element of this iterator matches a specific predicate.
@@ -227,7 +296,9 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given predicate is {@code null}.
      * @see Stream#anyMatch(Predicate)
      */
-    boolean anyMatch(Predicate<? super E> predicate);
+    public boolean anyMatch(Predicate<? super E> predicate) {
+        return IteratorUtils.anyMatch(delegate, predicate);
+    }
 
     /**
      * Returns whether or not all elements of this iterator match a specific predicate.
@@ -237,7 +308,9 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given predicate is {@code null}.
      * @see Stream#allMatch(Predicate)
      */
-    boolean allMatch(Predicate<? super E> predicate);
+    public boolean allMatch(Predicate<? super E> predicate) {
+        return IteratorUtils.allMatch(delegate, predicate);
+    }
 
     /**
      * Returns whether or not no element of this iterator matches a specific predicate.
@@ -247,7 +320,9 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @throws NullPointerException If the given predicate is {@code null}.
      * @see Stream#noneMatch(Predicate)
      */
-    boolean noneMatch(Predicate<? super E> predicate);
+    public boolean noneMatch(Predicate<? super E> predicate) {
+        return IteratorUtils.noneMatch(delegate, predicate);
+    }
 
     /**
      * Returns the first element of this iterator.
@@ -255,7 +330,9 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      * @return An {@link Optional} describing the first element, or {@link Optional#empty()} if this iterator has no elements.
      * @see Stream#findFirst()
      */
-    Optional<E> findFirst();
+    public Optional<E> findFirst() {
+        return IteratorUtils.findFirst(delegate);
+    }
 
     /**
      * Creates a new {@code StreamLikeIterator} backed by another iterator.
@@ -266,6 +343,6 @@ public interface StreamLikeIterator<E> extends Iterator<E> {
      */
     static <E> StreamLikeIterator<E> backedBy(Iterator<E> iterator) {
         Objects.requireNonNull(iterator);
-        return new StreamLikeIteratorImpl<>(iterator);
+        return new StreamLikeIterator<>(iterator);
     }
 }
