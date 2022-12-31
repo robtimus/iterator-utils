@@ -91,6 +91,7 @@ public abstract class LookaheadIterator<E> implements Iterator<E> {
     /**
      * Removes the latest element returned by {@link Iterator#next()}.
      *
+     * @implSpec The default implementation always throws an {@link UnsupportedOperationException}.
      * @param element The element to remove.
      */
     protected void remove(E element) {
