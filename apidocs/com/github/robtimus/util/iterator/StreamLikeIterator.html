@@ -18,8 +18,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":17,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
+var methods = {"i0":10,"i1":10,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -92,9 +92,17 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.github.robtimus.util.iterator</div>
-<h2 title="Interface StreamLikeIterator" class="title">Interface StreamLikeIterator&lt;E&gt;</h2>
+<h2 title="Class StreamLikeIterator" class="title">Class StreamLikeIterator&lt;E&gt;</h2>
 </div>
 <div class="contentContainer">
+<ul class="inheritance">
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>com.github.robtimus.util.iterator.StreamLikeIterator&lt;E&gt;</li>
+</ul>
+</li>
+</ul>
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
@@ -103,20 +111,21 @@ var activeTableTab = "activeTableTab";
 <dd><code>E</code> - The element type.</dd>
 </dl>
 <dl>
-<dt>All Superinterfaces:</dt>
+<dt>All Implemented Interfaces:</dt>
 <dd><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;</dd>
 </dl>
 <hr>
 <br>
-<pre>public interface <span class="typeNameLabel">StreamLikeIterator&lt;E&gt;</span>
-extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;</pre>
+<pre>public final class <span class="typeNameLabel">StreamLikeIterator&lt;E&gt;</span>
+extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;</pre>
 <div class="block">An <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util"><code>Iterator</code></a> that contains additional functionality similar to <a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html?is-external=true" title="class or interface in java.util.stream"><code>Stream</code></a>.</div>
 <dl>
-<dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Rob Spoor</dd>
 <dt><span class="simpleTagLabel">API Note:</span></dt>
 <dd>Instances of this class support the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the original iterator does, and no intermediate operation of
           this class removes support for the operation.</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Rob Spoor</dd>
 </dl>
 </li>
 </ul>
@@ -131,7 +140,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -149,7 +158,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>static &lt;E&gt;&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;E&gt;</code></td>
+<td class="colFirst"><code>static &lt;E&gt;&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;E&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#backedBy-java.util.Iterator-">backedBy</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;&nbsp;iterator)</code>
 <div class="block">Creates a new <code>StreamLikeIterator</code> backed by another iterator.</div>
 </td>
@@ -174,19 +183,19 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
+<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#distinct--">distinct</a></span>()</code>
 <div class="block">Returns an iterator that returns the distinct elements of this iterator (according to <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang"><code>Object.equals(Object)</code></a>).</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
+<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#dropWhile-java.util.function.Predicate-">dropWhile</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</code>
 <div class="block">Returns an iterator that discards elements of this iterator until an element does not match a specific predicate.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
+<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#filter-java.util.function.Predicate-">filter</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</code>
 <div class="block">Returns an iterator that filters out elements of this iterator.</div>
 </td>
@@ -198,87 +207,103 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;R&gt;</code></td>
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;R&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#flatMap-java.util.function.Function-">flatMap</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>,? extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;? extends R&gt;&gt;&nbsp;mapper)</code>
 <div class="block">Returns an iterator that replaces the elements of this iterator with the elements of a mapped iterator produced by applying a function to each
  element.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#forEachRemaining-java.util.function.Consumer-">forEachRemaining</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;action)</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#hasNext--">hasNext</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#limit-long-">limit</a></span>(long&nbsp;maxSize)</code>
 <div class="block">Returns an iterator that truncates this iterator.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
-<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;R&gt;</code></td>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code>&lt;R&gt;&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;R&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#map-java.util.function.Function-">map</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>,? extends R&gt;&nbsp;mapper)</code>
 <div class="block">Returns an iterator that applies a function to the elements of this iterator.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#max-java.util.Comparator-">max</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;comparator)</code>
 <div class="block">Returns the maximum element of this iterator according to a specific comparator.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#min-java.util.Comparator-">min</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;comparator)</code>
 <div class="block">Returns the minimum element of this iterator according to a specific comparator.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#next--">next</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#noneMatch-java.util.function.Predicate-">noneMatch</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</code>
 <div class="block">Returns whether or not no element of this iterator matches a specific predicate.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
-<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#peek-java.util.function.Consumer-">peek</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;action)</code>
 <div class="block">Returns an iterator that performs an additional action for each element of this iterator.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#reduce-java.util.function.BinaryOperator-">reduce</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BinaryOperator.html?is-external=true" title="class or interface in java.util.function">BinaryOperator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;accumulator)</code>
 <div class="block">Performs a reduction on the elements of this iterator.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#reduce-E-java.util.function.BinaryOperator-">reduce</a></span>(<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&nbsp;identity,
       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BinaryOperator.html?is-external=true" title="class or interface in java.util.function">BinaryOperator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;accumulator)</code>
 <div class="block">Performs a reduction on the elements of this iterator.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>&lt;U&gt;&nbsp;U</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#reduce-U-java.util.function.BiFunction-">reduce</a></span>(U&nbsp;identity,
       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html?is-external=true" title="class or interface in java.util.function">BiFunction</a>&lt;U,? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>,U&gt;&nbsp;accumulator)</code>
 <div class="block">Performs a reduction on the elements of this iterator.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
-<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
+<tr id="i23" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#remove--">remove</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#skip-long-">skip</a></span>(long&nbsp;n)</code>
 <div class="block">Returns an iterator that discards a number of elements at the start of this iterator.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html#takeWhile-java.util.function.Predicate-">takeWhile</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</code>
 <div class="block">Returns an iterator that discards elements of this iterator once an element matches a specific predicate.</div>
 </td>
 </tr>
 </table>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.java.util.Iterator">
+<li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;java.util.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a></h3>
-<code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#forEachRemaining-java.util.function.Consumer-" title="class or interface in java.util">forEachRemaining</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#hasNext--" title="class or interface in java.util">hasNext</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#next--" title="class or interface in java.util">next</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util">remove</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -294,13 +319,65 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="hasNext--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasNext</h4>
+<pre>public&nbsp;boolean&nbsp;hasNext()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#hasNext--" title="class or interface in java.util">hasNext</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="next--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>next</h4>
+<pre>public&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&nbsp;next()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#next--" title="class or interface in java.util">next</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="remove--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>remove</h4>
+<pre>public&nbsp;void&nbsp;remove()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util">remove</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="forEachRemaining-java.util.function.Consumer-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>forEachRemaining</h4>
+<pre>public&nbsp;void&nbsp;forEachRemaining(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;action)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#forEachRemaining-java.util.function.Consumer-" title="class or interface in java.util">forEachRemaining</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
 <a name="filter-java.util.function.Predicate-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>filter</h4>
-<pre><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;filter(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</pre>
+<pre>public&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;filter(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</pre>
 <div class="block">Returns an iterator that filters out elements of this iterator.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -320,7 +397,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>map</h4>
-<pre>&lt;R&gt;&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;R&gt;&nbsp;map(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>,? extends R&gt;&nbsp;mapper)</pre>
+<pre>public&nbsp;&lt;R&gt;&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;R&gt;&nbsp;map(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>,? extends R&gt;&nbsp;mapper)</pre>
 <div class="block">Returns an iterator that applies a function to the elements of this iterator.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -342,10 +419,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>flatMap</h4>
-<pre>&lt;R&gt;&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;R&gt;&nbsp;flatMap(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>,? extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;? extends R&gt;&gt;&nbsp;mapper)</pre>
+<pre>public&nbsp;&lt;R&gt;&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;R&gt;&nbsp;flatMap(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>,? extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;? extends R&gt;&gt;&nbsp;mapper)</pre>
 <div class="block">Returns an iterator that replaces the elements of this iterator with the elements of a mapped iterator produced by applying a function to each
  element.</div>
 <dl>
+<dt><span class="simpleTagLabel">API Note:</span></dt>
+<dd>Any iterator returned by a method of this interface after this call does <strong>not</strong> support the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a>
+          operation.</dd>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>R</code> - The element type of the resulting iterator.</dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -356,9 +436,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - If the given function is <code>null</code>.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html?is-external=true#flatMap-java.util.function.Function-" title="class or interface in java.util.stream"><code>Stream.flatMap(Function)</code></a></dd>
-<dt><span class="simpleTagLabel">API Note:</span></dt>
-<dd>Any iterator returned by a method of this interface after this call does <strong>not</strong> support the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a>
-          operation.</dd>
 </dl>
 </li>
 </ul>
@@ -368,16 +445,16 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>distinct</h4>
-<pre><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;distinct()</pre>
+<pre>public&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;distinct()</pre>
 <div class="block">Returns an iterator that returns the distinct elements of this iterator (according to <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang"><code>Object.equals(Object)</code></a>).</div>
 <dl>
+<dt><span class="simpleTagLabel">API Note:</span></dt>
+<dd>If elements occur more than once in the original iterator, only the first occurrence will be returned by the returned iterator,
+          and therefore only the first occurrence can be removed.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>An iterator that returns the distinct elements of this iterator.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html?is-external=true#distinct--" title="class or interface in java.util.stream"><code>Stream.distinct()</code></a></dd>
-<dt><span class="simpleTagLabel">API Note:</span></dt>
-<dd>If elements occur more than once in the original iterator, only the first occurrence will be returned by the returned iterator,
-          and therefore only the first occurrence can be removed.</dd>
 </dl>
 </li>
 </ul>
@@ -387,7 +464,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>peek</h4>
-<pre><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;peek(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;action)</pre>
+<pre>public&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;peek(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;action)</pre>
 <div class="block">Returns an iterator that performs an additional action for each element of this iterator.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -407,7 +484,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>limit</h4>
-<pre><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;limit(long&nbsp;maxSize)</pre>
+<pre>public&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;limit(long&nbsp;maxSize)</pre>
 <div class="block">Returns an iterator that truncates this iterator.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -427,7 +504,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>skip</h4>
-<pre><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;skip(long&nbsp;n)</pre>
+<pre>public&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;skip(long&nbsp;n)</pre>
 <div class="block">Returns an iterator that discards a number of elements at the start of this iterator.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -447,7 +524,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>takeWhile</h4>
-<pre><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;takeWhile(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</pre>
+<pre>public&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;takeWhile(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</pre>
 <div class="block">Returns an iterator that discards elements of this iterator once an element matches a specific predicate.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -465,7 +542,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>dropWhile</h4>
-<pre><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;dropWhile(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</pre>
+<pre>public&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;dropWhile(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</pre>
 <div class="block">Returns an iterator that discards elements of this iterator until an element does not match a specific predicate.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -485,8 +562,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>reduce</h4>
-<pre><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&nbsp;reduce(<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&nbsp;identity,
-         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BinaryOperator.html?is-external=true" title="class or interface in java.util.function">BinaryOperator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;accumulator)</pre>
+<pre>public&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&nbsp;reduce(<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&nbsp;identity,
+                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BinaryOperator.html?is-external=true" title="class or interface in java.util.function">BinaryOperator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;accumulator)</pre>
 <div class="block">Performs a reduction on the elements of this iterator.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -507,7 +584,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>reduce</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;reduce(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BinaryOperator.html?is-external=true" title="class or interface in java.util.function">BinaryOperator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;accumulator)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;reduce(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BinaryOperator.html?is-external=true" title="class or interface in java.util.function">BinaryOperator</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;accumulator)</pre>
 <div class="block">Performs a reduction on the elements of this iterator.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -529,8 +606,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>reduce</h4>
-<pre>&lt;U&gt;&nbsp;U&nbsp;reduce(U&nbsp;identity,
-             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html?is-external=true" title="class or interface in java.util.function">BiFunction</a>&lt;U,? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>,U&gt;&nbsp;accumulator)</pre>
+<pre>public&nbsp;&lt;U&gt;&nbsp;U&nbsp;reduce(U&nbsp;identity,
+                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html?is-external=true" title="class or interface in java.util.function">BiFunction</a>&lt;U,? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>,U&gt;&nbsp;accumulator)</pre>
 <div class="block">Performs a reduction on the elements of this iterator.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -553,8 +630,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>collect</h4>
-<pre>&lt;R&gt;&nbsp;R&nbsp;collect(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function">Supplier</a>&lt;R&gt;&nbsp;supplier,
-              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiConsumer.html?is-external=true" title="class or interface in java.util.function">BiConsumer</a>&lt;R,? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;accumulator)</pre>
+<pre>public&nbsp;&lt;R&gt;&nbsp;R&nbsp;collect(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function">Supplier</a>&lt;R&gt;&nbsp;supplier,
+                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiConsumer.html?is-external=true" title="class or interface in java.util.function">BiConsumer</a>&lt;R,? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;accumulator)</pre>
 <div class="block">Performs a reduction on the elements of this iterator.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -577,7 +654,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>collect</h4>
-<pre>&lt;R,A&gt;&nbsp;R&nbsp;collect(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collector.html?is-external=true" title="class or interface in java.util.stream">Collector</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>,A,R&gt;&nbsp;collector)</pre>
+<pre>public&nbsp;&lt;R,A&gt;&nbsp;R&nbsp;collect(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collector.html?is-external=true" title="class or interface in java.util.stream">Collector</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>,A,R&gt;&nbsp;collector)</pre>
 <div class="block">Performs a reduction on the elements of this iterator.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -600,7 +677,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>min</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;min(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;comparator)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;min(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;comparator)</pre>
 <div class="block">Returns the minimum element of this iterator according to a specific comparator.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -620,7 +697,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>max</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;max(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;comparator)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;max(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html?is-external=true" title="class or interface in java.util">Comparator</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;comparator)</pre>
 <div class="block">Returns the maximum element of this iterator according to a specific comparator.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -640,7 +717,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>count</h4>
-<pre>long&nbsp;count()</pre>
+<pre>public&nbsp;long&nbsp;count()</pre>
 <div class="block">Returns the number of elements of this iterator.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -656,7 +733,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>anyMatch</h4>
-<pre>boolean&nbsp;anyMatch(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</pre>
+<pre>public&nbsp;boolean&nbsp;anyMatch(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</pre>
 <div class="block">Returns whether or not at least one element of this iterator matches a specific predicate.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -676,7 +753,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>allMatch</h4>
-<pre>boolean&nbsp;allMatch(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</pre>
+<pre>public&nbsp;boolean&nbsp;allMatch(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</pre>
 <div class="block">Returns whether or not all elements of this iterator match a specific predicate.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -696,7 +773,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>noneMatch</h4>
-<pre>boolean&nbsp;noneMatch(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</pre>
+<pre>public&nbsp;boolean&nbsp;noneMatch(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super <a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;predicate)</pre>
 <div class="block">Returns whether or not no element of this iterator matches a specific predicate.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -716,7 +793,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>findFirst</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;findFirst()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="type parameter in StreamLikeIterator">E</a>&gt;&nbsp;findFirst()</pre>
 <div class="block">Returns the first element of this iterator.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -732,7 +809,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>backedBy</h4>
-<pre>static&nbsp;&lt;E&gt;&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;E&gt;&nbsp;backedBy(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;&nbsp;iterator)</pre>
+<pre>public static&nbsp;&lt;E&gt;&nbsp;<a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator">StreamLikeIterator</a>&lt;E&gt;&nbsp;backedBy(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;&nbsp;iterator)</pre>
 <div class="block">Creates a new <code>StreamLikeIterator</code> backed by another iterator.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>

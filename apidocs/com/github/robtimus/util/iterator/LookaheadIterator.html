@@ -49,7 +49,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../com/github/robtimus/util/iterator/IteratorUtils.html" title="class in com.github.robtimus.util.iterator"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?com/github/robtimus/util/iterator/LookaheadIterator.html" target="_top">Frames</a></li>
@@ -125,10 +125,10 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
  Sub classes should implement <a href="../../../../../com/github/robtimus/util/iterator/LookaheadIterator.html#findNext-java.util.function.Consumer-"><code>findNext(Consumer)</code></a> to find the next element. Furthermore, sub classes should support the
  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation should also override <a href="../../../../../com/github/robtimus/util/iterator/LookaheadIterator.html#remove--"><code>remove()</code></a> .</div>
 <dl>
-<dt><span class="simpleTagLabel">Author:</span></dt>
-<dd>Rob Spoor</dd>
 <dt><span class="simpleTagLabel">API Note:</span></dt>
 <dd>Removing elements has not been implemented. It is up to sub classes to implement it if removing elements needs to be supported.</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Rob Spoor</dd>
 </dl>
 </li>
 </ul>
@@ -292,6 +292,8 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <pre>protected&nbsp;void&nbsp;remove(<a href="../../../../../com/github/robtimus/util/iterator/LookaheadIterator.html" title="type parameter in LookaheadIterator">E</a>&nbsp;element)</pre>
 <div class="block">Removes the latest element returned by <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#next--" title="class or interface in java.util"><code>Iterator.next()</code></a>.</div>
 <dl>
+<dt><span class="simpleTagLabel">Implementation Requirements:</span></dt>
+<dd>The default implementation always throws an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang"><code>UnsupportedOperationException</code></a>.</dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>element</code> - The element to remove.</dd>
 </dl>
@@ -338,7 +340,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../com/github/robtimus/util/iterator/IteratorUtils.html" title="class in com.github.robtimus.util.iterator"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="interface in com.github.robtimus.util.iterator"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../com/github/robtimus/util/iterator/StreamLikeIterator.html" title="class in com.github.robtimus.util.iterator"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?com/github/robtimus/util/iterator/LookaheadIterator.html" target="_top">Frames</a></li>

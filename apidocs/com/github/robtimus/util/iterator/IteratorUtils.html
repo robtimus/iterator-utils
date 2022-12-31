@@ -386,14 +386,14 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <pre>public static&nbsp;&lt;E&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;&nbsp;singletonIterator(E&nbsp;element)</pre>
 <div class="block">Returns an iterator that returns a single element. This method is like using the iterator of <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html?is-external=true#singleton-T-" title="class or interface in java.util"><code>Collections.singleton(Object)</code></a>.</div>
 <dl>
+<dt><span class="simpleTagLabel">API Note:</span></dt>
+<dd>The returned iterator does <strong>not</strong> support the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation.</dd>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>E</code> - The element type.</dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>element</code> - The element to return.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>An iterator that returns the given element.</dd>
-<dt><span class="simpleTagLabel">API Note:</span></dt>
-<dd>The returned iterator does <strong>not</strong> support the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation.</dd>
 </dl>
 </li>
 </ul>
@@ -427,6 +427,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super E&gt;&nbsp;predicate)</pre>
 <div class="block">Returns an iterator that filters out elements of another iterator.</div>
 <dl>
+<dt><span class="simpleTagLabel">API Note:</span></dt>
+<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.</dd>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>E</code> - The element type.</dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -438,8 +440,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - If the given iterator or predicate is <code>null</code>.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html?is-external=true#filter-java.util.function.Predicate-" title="class or interface in java.util.stream"><code>Stream.filter(Predicate)</code></a></dd>
-<dt><span class="simpleTagLabel">API Note:</span></dt>
-<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.</dd>
 </dl>
 </li>
 </ul>
@@ -453,6 +453,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html?is-external=true" title="class or interface in java.util.function">Function</a>&lt;? super E,? extends R&gt;&nbsp;mapper)</pre>
 <div class="block">Returns an iterator that applies a function to the elements of another iterator.</div>
 <dl>
+<dt><span class="simpleTagLabel">API Note:</span></dt>
+<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.</dd>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>E</code> - The element type of the input iterator.</dd>
 <dd><code>R</code> - The element type of the resulting iterator.</dd>
@@ -465,8 +467,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - If the given iterator or function is <code>null</code>.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html?is-external=true#map-java.util.function.Function-" title="class or interface in java.util.stream"><code>Stream.map(Function)</code></a></dd>
-<dt><span class="simpleTagLabel">API Note:</span></dt>
-<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.</dd>
 </dl>
 </li>
 </ul>
@@ -481,6 +481,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <div class="block">Returns an iterator that replaces the elements of another iterator with the elements of a mapped iterator produced by applying a function to
  each element.</div>
 <dl>
+<dt><span class="simpleTagLabel">API Note:</span></dt>
+<dd>The returned iterator does <strong>not</strong> support the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation.</dd>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>E</code> - The element type of the input iterator.</dd>
 <dd><code>R</code> - The element type of the resulting iterator.</dd>
@@ -493,8 +495,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - If the given iterator or function is <code>null</code>.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html?is-external=true#flatMap-java.util.function.Function-" title="class or interface in java.util.stream"><code>Stream.flatMap(Function)</code></a></dd>
-<dt><span class="simpleTagLabel">API Note:</span></dt>
-<dd>The returned iterator does <strong>not</strong> support the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation.</dd>
 </dl>
 </li>
 </ul>
@@ -507,6 +507,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <pre>public static&nbsp;&lt;E&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;&nbsp;distinct(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;&nbsp;iterator)</pre>
 <div class="block">Returns an iterator that returns the distinct elements of another iterator (according to <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang"><code>Object.equals(Object)</code></a>).</div>
 <dl>
+<dt><span class="simpleTagLabel">API Note:</span></dt>
+<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.
+          If elements occur more than once in the original iterator, only the first occurrence will be returned by the returned iterator,
+          and therefore only the first occurrence can be removed.</dd>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>E</code> - The element type.</dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -517,10 +521,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - If the given iterator is <code>null</code>.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html?is-external=true#distinct--" title="class or interface in java.util.stream"><code>Stream.distinct()</code></a></dd>
-<dt><span class="simpleTagLabel">API Note:</span></dt>
-<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.
-          If elements occur more than once in the original iterator, only the first occurrence will be returned by the returned iterator,
-          and therefore only the first occurrence can be removed.</dd>
 </dl>
 </li>
 </ul>
@@ -534,6 +534,8 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;? super E&gt;&nbsp;action)</pre>
 <div class="block">Returns an iterator that performs an additional action for each element of another iterator.</div>
 <dl>
+<dt><span class="simpleTagLabel">API Note:</span></dt>
+<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.</dd>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>E</code> - The element type.</dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -545,8 +547,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - If the given iterator or action is <code>null</code>.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html?is-external=true#peek-java.util.function.Consumer-" title="class or interface in java.util.stream"><code>Stream.peek(Consumer)</code></a></dd>
-<dt><span class="simpleTagLabel">API Note:</span></dt>
-<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.</dd>
 </dl>
 </li>
 </ul>
@@ -560,6 +560,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                     long&nbsp;maxSize)</pre>
 <div class="block">Returns an iterator that truncates another iterator.</div>
 <dl>
+<dt><span class="simpleTagLabel">API Note:</span></dt>
+<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.
+          Discarded elements will not be returned by the returned iterator, and therefore cannot be removed.</dd>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>E</code> - The element type.</dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -572,9 +575,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - If the given maximum number of elements is negative.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html?is-external=true#limit-long-" title="class or interface in java.util.stream"><code>Stream.limit(long)</code></a></dd>
-<dt><span class="simpleTagLabel">API Note:</span></dt>
-<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.
-          Discarded elements will not be returned by the returned iterator, and therefore cannot be removed.</dd>
 </dl>
 </li>
 </ul>
@@ -588,6 +588,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                    long&nbsp;n)</pre>
 <div class="block">Returns an iterator that discards a number of elements at the start of another iterator.</div>
 <dl>
+<dt><span class="simpleTagLabel">API Note:</span></dt>
+<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.
+          Discarded elements will not be returned by the returned iterator, and therefore cannot be removed.</dd>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>E</code> - The element type.</dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -600,9 +603,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - If the given number of elements is negative.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html?is-external=true#skip-long-" title="class or interface in java.util.stream"><code>Stream.skip(long)</code></a></dd>
-<dt><span class="simpleTagLabel">API Note:</span></dt>
-<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.
-          Discarded elements will not be returned by the returned iterator, and therefore cannot be removed.</dd>
 </dl>
 </li>
 </ul>
@@ -616,6 +616,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super E&gt;&nbsp;predicate)</pre>
 <div class="block">Returns an iterator that discards elements of another iterator once an element matches a specific predicate.</div>
 <dl>
+<dt><span class="simpleTagLabel">API Note:</span></dt>
+<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.
+          Discarded elements will not be returned by the returned iterator, and therefore cannot be removed.</dd>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>E</code> - The element type.</dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -625,9 +628,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd>An iterator that discards elements of the given iterator once an element matches the given predicate.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - If the given iterator or predicate is <code>null</code>.</dd>
-<dt><span class="simpleTagLabel">API Note:</span></dt>
-<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.
-          Discarded elements will not be returned by the returned iterator, and therefore cannot be removed.</dd>
 </dl>
 </li>
 </ul>
@@ -641,6 +641,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html?is-external=true" title="class or interface in java.util.function">Predicate</a>&lt;? super E&gt;&nbsp;predicate)</pre>
 <div class="block">Returns an iterator that discards elements of another iterator until an element does not match a specific predicate.</div>
 <dl>
+<dt><span class="simpleTagLabel">API Note:</span></dt>
+<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.
+          Discarded elements will not be returned by the returned iterator, and therefore cannot be removed.</dd>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
 <dd><code>E</code> - The element type.</dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -650,9 +653,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <dd>An iterator that discards elements of the given iterator until an element does not match the given predicate.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - If the given iterator or predicate is <code>null</code>.</dd>
-<dt><span class="simpleTagLabel">API Note:</span></dt>
-<dd>The returned iterator supports the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#remove--" title="class or interface in java.util"><code>Iterator.remove()</code></a> operation if the given iterator does.
-          Discarded elements will not be returned by the returned iterator, and therefore cannot be removed.</dd>
 </dl>
 </li>
 </ul>
