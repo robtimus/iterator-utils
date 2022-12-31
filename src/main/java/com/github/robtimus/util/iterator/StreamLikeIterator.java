@@ -341,7 +341,7 @@ public final class StreamLikeIterator<E> implements Iterator<E> {
      * @param iterator The backing iterator.
      * @return The created {@code StreamLikeIterator}
      */
-    static <E> StreamLikeIterator<E> backedBy(Iterator<E> iterator) {
+    public static <E> StreamLikeIterator<E> backedBy(Iterator<E> iterator) {
         Objects.requireNonNull(iterator);
         return new StreamLikeIterator<>(iterator);
     }
