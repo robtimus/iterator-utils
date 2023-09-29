@@ -25,7 +25,7 @@ import java.util.function.Consumer;
  * A base class for {@link Iterator} implementations that need to calculate the next value in order to let {@link Iterator#hasNext()} return whether
  * or not there is a next value.
  * <p>
- * Sub classes should implement {@link #findNext(Consumer)} to find the next element. Furthermore, sub classes should support the
+ * Sub classes should implement {@link #findNext(Consumer)} to find the next element. Furthermore, sub classes that should support the
  * {@link Iterator#remove()} operation should also override {@link #remove()} .
  *
  * @author Rob Spoor
