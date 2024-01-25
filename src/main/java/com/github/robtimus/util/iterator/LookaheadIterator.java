@@ -26,7 +26,7 @@ import java.util.function.Consumer;
  * or not there is a next value.
  * <p>
  * Sub classes should implement {@link #findNext(Consumer)} to find the next element. Furthermore, sub classes that should support the
- * {@link Iterator#remove()} operation should also override {@link #remove()} .
+ * {@link Iterator#remove()} operation should also override {@link #remove(Object)}.
  *
  * @author Rob Spoor
  * @apiNote Removing elements has not been implemented. It is up to sub classes to implement it if removing elements needs to be supported.
